@@ -1,6 +1,5 @@
 
-
-    body,
+body,
 html {
     margin: 0;
     padding: 0;
@@ -78,11 +77,11 @@ nav ul li a {
 
 nav ul li a:hover {
     font-weight: bold;
-            background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 /* Estilo del carrusel */
@@ -156,7 +155,6 @@ nav ul li a:hover {
     position: relative;
 }
 
-/* Coloca el título en el borde superior central */
 .title-container h1 {
     position: absolute;
     top: 50px;
@@ -508,7 +506,7 @@ legend {
     bottom: 0;
 }
 
-/* Ajustes para el menú del pie de página */
+/* Ajustes para el menú del pie de página *
 .footer-menu-container {
     display: flex;
     justify-content: center;
