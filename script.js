@@ -25,7 +25,7 @@
             if (!isInFirstSection) {
                 header.classList.add('hidden');
             }
-        }, 500); // Ajusta el tiempo según sea necesario
+        }, 500); 
     }
 
     // Event listener para el movimiento del mouse
@@ -50,7 +50,7 @@
         });
     });
 
-    // Inicialmente oculta el encabezado cuando la página carga
+    //oculta el encabezado cuando la página carga
     hideHeader();
 });
 
