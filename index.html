@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="icon" href="imagenes/logo-nuevisimo.png" type="image/png" sizes="48x48">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="encabezado">
+      <div class="logo"><a href="#inicio"><img src="imagenes/logo nuevisimo.png" alt="" height="150px"></a></div>
+      <div class="cabecera">
+        <nav>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#reservar-cita">Reservar Cita</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="carousel">
+    <div class="slide background1" id="inicio"></div>
+    <div class="slide background2" id="sobre-nosotros">
+      <div class="texto">
+        <h2>Sobre nosotros</h2>
+        <h4>En Biomecánica Vital nos dedicamos <br>
+          a mejorar tu calidad de vida a través <br>
+          de un enfoque personalizado en <br>
+          fisioterapia. Combinamos técnicas <br>
+          avanzadas y un trato cercano para <br>
+          ayudarte a recuperarte de lesiones, <br>
+          aliviar el dolor y optimizar tu <br>
+          bienestar físico. Nuestro equipo de <br>
+          expertos está comprometido con tu <br>
+          salud, brindándote un cuidado <br>
+          integral que te permitirá moverte <br>
+          mejor y vivir sin limitaciones</h4>
+      </div>
+    </div>
+    <div class="slide background3" id="servicios">
+
+      <div class="title-container">
+        <h1>Nuestros Servicios</h1>
+      </div>
+      <div class="card-group">
+        <div class="tarjeta" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front1">
+              <div class="card-body"></div>
+            </div>
+            <div class="card-back">
+              <div class="card-body">
+
+                <p class="card-text">
+                  El tratamiento de lesiones en fisioterapia
+                  se centra en reducir el dolor, controlar
+                  la inflamación, restaurar el rango de movimiento
+                  y fortalecer los músculos afectados. A través
+                  de una combinación de técnicas manuales, ejercicios
+                  específicos y modalidades de terapia, el objetivo
+                  es recuperar la función normal, prevenir recaídas
+                  y mejorar la calidad de vida del paciente.
+
+                </p>
+
+              </div>
+            </div>
+          </div>
+
+          <h5 class="card-title"><strong>Tratamiento de Lesiones</strong></h5> <!-- Título debajo de la tarjeta -->
+        </div>
+
+        <div class="tarjeta" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front2">
+              <div class="card-body"></div>
+            </div>
+            <div class="card-back">
+              <div class="card-body">
+
+                <p class="card-text">
+                  La rehabilitación en fisioterapia se enfoca
+                  en restaurar la función y movilidad tras una
+                  lesión o cirugía. A través de ejercicios personalizados,
+                  técnicas manuales y modalidades terapéuticas, se busca
+                  reducir el dolor, mejorar la fuerza y el rango de movimiento,
+                  y promover una recuperación óptima. El objetivo es
+                  devolver al paciente a sus actividades diarias de
+                  manera segura y prevenir futuras complicaciones.
+
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <h5 class="card-title"><strong>Rehabilitación</strong></h5> <!-- Título debajo de la tarjeta -->
+        </div>
+
+        <div class="tarjeta" onclick="flipCard(this)">
+          <div class="card-inner">
+            <div class="card-front3">
+              <div class="card-body"></div>
+            </div>
+            <div class="card-back">
+              <div class="card-body">
+
+                <p class="card-text">
+                  Las terapias alternativas en fisioterapia incluyen
+                  enfoques complementarios a los tratamientos convencionales,
+                  como la acupuntura, la terapia con ventosas, y la terapia
+                  manual de tejidos blandos. Estas técnicas buscan mejorar
+                  el bienestar del paciente al reducir el dolor, aumentar
+                  la movilidad y fomentar la curación natural. Se utilizan
+                  como complemento para optimizar los resultados del
+                  tratamiento y abordar el bienestar integral del paciente.
+
+                </p>
+              </div>
+            </div>
+          </div>
+          <h5 class="card-title"><strong>Terapias alternativas</strong></h5> <!-- Título debajo de la tarjeta -->
+        </div>
+      </div>
+
+    </div>
+
+    <div class="slide background4" id="reservar-cita">
+      <button class="reservar-btn" id="abrir-calendario">Haz tu Reserva</button>
+
+      <div id="form-overlay" class="hidden"></div>
+      <div id="form-container" class="hidden form-container">
+        <form id="reservation-form">
+          <fieldset>
+            <legend><b>Formulario de Reserva</b></legend>
+            <br><br>
+            <div class="inputBox">
+              <input type="text" name="name" id="name" class="inputUser" required>
+              <label for="name" class="labelInput">Nombre completo</label>
+            </div>
+            <br><br>
+            <div class="inputBox">
+              <input type="email" name="email" id="email" class="inputUser" required>
+              <label for="email" class="labelInput">Email</label>
+            </div>
+            <br><br>
+            <div class="inputBox">
+              <input type="tel" name="phone" id="phone" class="inputUser" required>
+              <label for="phone" class="labelInput">Teléfono</label>
+            </div>
+
+            <br><br>
+            <label for="birthdate"><b>Fecha de Nacimiento:</b></label>
+            <input type="date" name="birthdate" id="birthdate" required>
+            <br><br>
+            <label for="appointment-datetime"><b>Selecciona una fecha y hora:</b></label>
+            <input type="text" id="appointment-datetime" name="appointment-datetime" required>
+            <br><br>
+
+            <button type="submit" id="submit">Enviar</button>
+            <br><br>
+            <button type="button" id="close-form" class="close-btn">Cancelar</button>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <div class="slide background5" id="contacto">
+      <div class="container-seccion5">
+        <h1 class="t-contacto">Donde estamos</h1>
+
+        <div class="ubicacion"></div>
+        <figure>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d792.2806383348409!2d-5.920221530408022!3d37.41057809825495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd126990420db30b%3A0x59357e63dd8bd96d!2sTuplanfit!5e0!3m2!1ses!2ses!4v1696850206911!5m2!1ses!2ses"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </figure>
+      </div>
+      <!-- Pie de página -->
+      <footer class="pie-de-pagina">
+        <div class="social-buttons">
+          <a href="https://wa.me/tu_numero" target="_blank" class="social-button whatsapp" title="WhatsApp"></a>
+          <a href="https://www.instagram.com/tu_usuario" target="_blank" class="social-button instagram"
+            title="Instagram"></a>
+          <a href="mailto:tu_email@example.com" class="social-button email" title="Email"></a>
+          <a href="https://t.me/tu_usuario" target="_blank" class="social-button telegram" title="Telegram"></a>
+        </div>
+        <ul class="footer-menu-container">
+          <li class="menu-pie"><a href="#">Legal</a></li>
+          <li class="menu-pie"><a href="#">Cookies</a></li>
+          <li class="menu-pie"><a href="#">Privacidad</a></li>
+        </ul>
+      </footer>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>

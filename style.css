@@ -1,0 +1,528 @@
+
+
+    body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+/* Encabezado */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    z-index: 1000;
+    padding: 5px 0;
+    transition: top 0.3s;
+    text-align: right;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+header.hidden {
+    top: -140px;
+}
+
+/* Contenidos del header */
+.encabezado {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    padding-left: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding-left: 650px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    padding-right: 20px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+nav ul li a:hover {
+    font-weight: bold;
+            background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+}
+
+/* Estilo del carrusel */
+.carousel {
+    height: 100vh;
+    overflow: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.slide {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    scroll-snap-align: start;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fondo de las secciones */
+.background1 {
+    background-image: url(imagenes/1.png);
+}
+
+.background2 {
+    background-image: url(imagenes/2.png);
+}
+
+.background3 {
+    background-image: url(imagenes/3.png);
+}
+
+.background4 {
+    background-image: url(imagenes/4.png);
+}
+
+.background5 {
+    background-image: url(imagenes/5.png);
+}
+
+/* Sección 2 */
+.texto {
+    display: block;
+    text-align: center;
+    justify-content: center;
+    padding-left: 800px;
+    
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.texto h2 {
+    font-size: 80px;
+}
+
+.texto h4 {
+    font-size: 30px;
+}
+
+/* Sección 3 */
+.slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Coloca el título en el borde superior central */
+.title-container h1 {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    margin: 0;
+    font-size: 80px;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+/* Contenedor del grupo de tarjetas */
+.card-group {
+    width: 90%;
+    height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+    
+}
+
+/* Ajustes generales para las tarjetas */
+.tarjeta {
+    width: 300px;
+    height: 350px;
+    perspective: 1000px; /* Agrega profundidad para el efecto de flip */
+    margin-bottom: 30px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    background-color: transparent;
+}
+
+
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d; /* Necesario para el efecto de 3D */
+    transition: transform 0.6s; /* Suaviza la transición del flip */
+    border-radius: 20px;
+    
+}
+    
+
+.card-front1, .card-front2, .card-front3, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backface-visibility: hidden; /* Oculta la cara opuesta cuando se voltea */
+}
+
+/* Frente de la tarjeta */
+.card-front1 {
+    background-image: url('imagenes/lesiones.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-front2 {
+    background-image: url('imagenes/rehabilitacion1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-front3 {
+    background-image: url('imagenes/terapia.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Parte trasera de la tarjeta */
+.card-back {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    transform: rotateY(180deg); /* Gira la parte trasera para que esté oculta por defecto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 10px;
+}
+
+/* Efecto de flip */
+.tarjeta.flip .card-inner {
+    transform: rotateY(180deg); /* Gira la tarjeta para mostrar la parte trasera */
+}
+
+/* Contenido de la tarjeta */
+
+.card-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    background-color: transparent; /* Hace el fondo del contenedor invisible */
+    color: white;
+    border-radius: 10px;
+}
+
+.card-title {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    color: #333;
+    font-family: "Dancing Script", cursive;
+}
+
+/* Sección 4 */
+.reservar-btn {
+    margin-top: 400px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #565d64;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.reservar-btn:hover {
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+
+/* Estilo para el overlay que cubre toda la pantalla */
+form {
+    width: 100%;
+    height: 100%;
+}
+
+#form-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para el contenedor del formulario */
+#form-container {
+    display: none;
+    position: fixed;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+}
+
+/* Botón de cerrar */
+#form-container .close-btn {
+    
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Estilo del formulario dentro del contenedor */
+#form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+fieldset {
+    border: 3px solid dodgerblue;
+}
+
+legend {
+    
+    padding: 10px;
+    text-align: center;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+    border-radius: 8px;
+}
+
+.inputBox {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.inputUser {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #333;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    letter-spacing: 2px;
+}
+
+.labelInput {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+    transition: .5s;
+    color: #333;
+}
+
+.inputUser:focus~.labelInput,
+.inputUser:valid~.labelInput {
+    top: -20px;
+    font-size: 12px;
+    color: rgb(65, 222, 62);
+}
+
+#data_nascimento {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+}
+
+#appointment-datetime {
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+}
+
+#submit {
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+    width: 100%;
+    border: none;
+    padding: 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+#submit:hover {
+    background-image: linear-gradient(to top, #89e439 0%, #27ac8d 100%);
+}
+.close-btn{
+    background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+
+.close-btn:hover{
+    background-image: linear-gradient(to top, #89e439 0%, #27ac8d 100%);
+}
+
+/* SECCIÓN DE CONTACTO */
+.slide{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container-seccion5 {
+    display: flex;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    
+}
+
+.t-contacto {
+    margin-bottom: 50px;
+    margin-right: 100px;
+    font-size: 80px;
+    font-family: "Dancing Script", cursive;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+    
+}
+
+/* Iconos de redes sociales */
+.whatsapp {
+    background-image: url(imagenes/icono\ whast.png);
+}
+
+.instagram {
+    background-image: url(imagenes/iconoig.png);
+}
+
+.email {
+    background-image: url(imagenes/iconoemail.png);
+}
+
+.telegram {
+    background-image: url(imagenes/icontele.jpg);
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    transition: opacity 0.3s ease;
+}
+
+.social-button:hover {
+    opacity: 0.8;
+}
+
+/* Pie de página */
+.pie-de-pagina {
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255, 255, 255, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+    background-blend-mode: screen;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    bottom: 0;
+}
+
+/* Ajustes para el menú del pie de página */
+.footer-menu-container {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.footer-menu-container li {
+    padding: 0 10px;
+    list-style-type: none;
+}
+
+.footer-menu-container a {
+    text-decoration: none;
+    color: #000;
+}
+
+
